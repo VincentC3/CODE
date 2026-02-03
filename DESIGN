@@ -1,0 +1,180 @@
+using System.Diagnostics.Eventing.Reader;
+
+namespace Cunanan_Vincent_V_ACT_1D
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pnl1.Enabled = true;
+            pnl2.Enabled = true;
+            pnl3.Enabled = true;
+            pnl4.Enabled = true;
+            btnStart.Visible = false;
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pnl1.Enabled = false;
+            pnl2.Enabled = false;
+            pnl3.Enabled = false;
+            pnl4.Enabled = false;
+            btnEnd.Visible = true;
+            btnStart.Visible = true;
+            
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+
+        {
+
+            int size = 0;
+            if (rbHawaiian.Checked)
+            {
+                if (rbSmall.Checked)
+                {
+                    size += 500;
+                }
+                else if (rbMedium.Checked)
+                {
+                    size += 650;
+                }
+                else if (rbLarge.Checked)
+                {
+                    size += 750;
+                }
+
+
+            }
+
+            else if (rbItalian.Checked)
+
+            {
+                if (rbSmall.Checked)
+                {
+                    size += 500;
+                }
+                else if (rbMedium.Checked)
+                {
+                    size += 650;
+                }
+                else if (rbLarge.Checked)
+                {
+                    size += 750;
+                }
+
+
+
+            }
+            else if (rbOverload.Checked)
+            {
+
+                if (rbSmall.Checked)
+                {
+                    size += 500;
+                }
+                else if (rbMedium.Checked)
+                {
+                    size += 650;
+                }
+                else if (rbLarge.Checked)
+                {
+                    size += 750;
+                }
+
+
+            }
+            if (cbCheese.Checked)
+            {
+                size += 50;
+            }
+            if (cbBacon.Checked)
+            {
+                size += 75;
+            }
+            if (cbPepperoni.Checked)
+            {
+                size += 50;
+            }
+            if (cbBellPepper.Checked)
+            {
+                size += 50;
+            }
+            txtTotal.Text = size.ToString();
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int totalamount = int.Parse(txtTotal.Text);
+            int amountpaid = int.Parse(txtPaid.Text);
+            int change = amountpaid - totalamount;
+            if (amountpaid >= totalamount)
+                
+            {
+                txtChange.Text = change.ToString();
+            }
+            else 
+            {
+                txtChange.Text = "insuficient Balance";
+            }
+
+        }
+
+        private void txtPaid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
+
